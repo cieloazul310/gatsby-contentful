@@ -1,0 +1,63 @@
+{
+  "name": "gatsby-typescript-mdx-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gatsby TypeScript MDX starter with ESlint, Prettier, husky and lint-staged.",
+  "author": "cieloazul310",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit",
+    "prettier": "prettier \"src/**/*.{js,jsx,ts,tsx}\" --parser typescript --write",
+    "eslint": "eslint src/",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "dependencies": {
+    "@mdx-js/react": "latest",
+    "gatsby": "latest",
+    "gatsby-plugin-image": "latest",
+    "gatsby-plugin-mdx": "latest",
+    "gatsby-plugin-sharp": "latest",
+    "gatsby-remark-images": "latest",
+    "gatsby-source-filesystem": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "eslint": "latest",
+    "eslint-config-airbnb": "latest",
+    "eslint-config-airbnb-typescript": "latest",
+    "eslint-config-prettier": "latest",
+    "eslint-plugin-graphql": "latest",
+    "eslint-plugin-import": "latest",
+    "eslint-plugin-jsx-a11y": "latest",
+    "eslint-plugin-react": "latest",
+    "eslint-plugin-react-hooks": "latest",
+    "husky": "latest",
+    "lint-staged": "latest",
+    "prettier": "latest",
+    "typescript": "latest"
+  },
+  "lint-staged": {
+    "./src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --parser typescript --write"
+    ],
+    "./gatsby-*.{js,jsx,ts,tsx}": [
+      "eslint --fix --ignore-pattern \"**/stories/**/*\"",
+      "prettier --parser typescript --write"
+    ]
+  }
+}

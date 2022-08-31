@@ -1,0 +1,46 @@
+---
+title: Index Page
+---
+
+import MdxTemplate from '../templates/mdx-template';
+import Seo from '../components/Seo';
+
+Gatsby TypeScript MDX Project Example
+
+## Features
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [MDX v2](https://mdxjs.com/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [husky](https://typicode.github.io/husky/#/)
+- [lint-staged](https://github.com/okonet/lint-staged)
+
+## Quick start
+
+```sh
+$ git clone git@github.com:cieloazul310/gatsby-typescript-mdx-starter.git
+$ yarn install
+
+# develop
+$ yarn run start
+
+# build
+$ yarn run build
+
+# lint
+$ yarn run eslint
+
+# format
+$ yarn run prettier
+```
+
+<Link to="/page-2/">
+  Go to Page Two
+</Link>
+
+export default MdxTemplate;
+
+export const Head = () => {
+  return <Seo title="Index Page" />;
+}
