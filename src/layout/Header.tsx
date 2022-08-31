@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Box, Heading, Text } from '@chakra-ui/react';
 import useSiteMetadata from '../utils/useSiteMetadata';
 
 type HeaderProps = {
@@ -8,29 +9,31 @@ type HeaderProps = {
 function Header({ title }: HeaderProps) {
   const siteMetadata = useSiteMetadata();
   return (
-    <header
-      style={{
-        background: '#fff',
-        color: '#000',
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.25)',
-      }}
-    >
-      <div
-        style={{
-          padding: '32px 16px',
-          width: '100%',
-          maxWidth: 720,
-          display: 'flex',
-          flexDirection: 'column',
-        }}
+    <Box width="100%" p={2} as="header">
+      <Box
+        bg="white"
+        color="#000"
+        width="100%"
+        boxShadow="lg"
+        rounded="md"
+        display="flex"
+        justifyContent="center"
       >
-        <h1 style={{ fontSize: '1.6em', margin: '0 0 .2em 0' }}>{title}</h1>
-        <span style={{ fontSize: '.8em' }}>{siteMetadata.title}</span>
-      </div>
-    </header>
+        <Box
+          px={4}
+          py={8}
+          width="100%"
+          maxWidth={720}
+          display="flex"
+          flexDirection="column"
+        >
+          <Heading as="h1" size="lg" mb={1}>
+            {title}
+          </Heading>
+          <Text size="sm">{siteMetadata.title}</Text>
+        </Box>
+      </Box>
+    </Box>
   );
 }
 

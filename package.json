@@ -20,12 +20,20 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
+    "@chakra-ui/gatsby-plugin": "latest",
+    "@chakra-ui/react": "latest",
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
     "@mdx-js/react": "latest",
+    "@sindresorhus/slugify": "latest",
+    "dotenv": "latest",
+    "framer-motion": "latest",
     "gatsby": "latest",
     "gatsby-plugin-image": "latest",
     "gatsby-plugin-mdx": "latest",
     "gatsby-plugin-sharp": "latest",
     "gatsby-remark-images": "latest",
+    "gatsby-source-contentful": "latest",
     "gatsby-source-filesystem": "latest",
     "react": "latest",
     "react-dom": "latest"

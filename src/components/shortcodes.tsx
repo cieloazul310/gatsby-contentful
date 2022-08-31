@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import Link from './Link';
 
 const shortCodes = { Link };
 

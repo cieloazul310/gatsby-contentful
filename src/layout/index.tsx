@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Box } from '@chakra-ui/react';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -10,17 +11,15 @@ function Layout({ children, title }: LayoutProps) {
   return (
     <>
       <Header title={title} />
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          width: '100%',
-        }}
+      <Box
+        display="flex"
+        justifyContent="center"
+        width="100%"
       >
-        <main style={{ padding: '64px 16px', width: '100%', maxWidth: 720 }}>
-          {children}
-        </main>
-      </div>
+        <Box as="main" px={4} py={16} width="100%" maxWidth={720}>
+          <main>{children}</main>
+        </Box>
+      </Box>
       <Footer />
     </>
   );

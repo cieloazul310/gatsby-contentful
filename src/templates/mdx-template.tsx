@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PageProps } from 'gatsby';
+import type { PageProps } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import Layout from '../layout';
 import mdxComponents from '../components/mdxComponents';

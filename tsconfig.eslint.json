@@ -3,8 +3,8 @@
   "include": [
     "src/**/*",
     ".eslintrc.js",
-    "./gatsby-node.ts",
     "./gatsby-config.ts",
+    "./gatsby-node.ts",
     "./gatsby-browser.tsx",
     "./gatsby-ssr.tsx",
     "./plugins/**/*",
