@@ -22,6 +22,8 @@
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "latest",
     "@chakra-ui/react": "latest",
+    "@contentful/rich-text-react-renderer": "latest",
+    "@contentful/rich-text-types": "latest",
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
     "@mdx-js/react": "latest",

@@ -2575,7 +2575,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@contentful/rich-text-react-renderer@npm:^15.12.1":
+"@contentful/rich-text-react-renderer@npm:^15.12.1, @contentful/rich-text-react-renderer@npm:latest":
   version: 15.12.1
   resolution: "@contentful/rich-text-react-renderer@npm:15.12.1"
   dependencies:
@@ -2587,7 +2587,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@contentful/rich-text-types@npm:^15.12.1":
+"@contentful/rich-text-types@npm:^15.12.1, @contentful/rich-text-types@npm:latest":
   version: 15.12.1
   resolution: "@contentful/rich-text-types@npm:15.12.1"
   checksum: 2a0f7b2e39f04dcf00847a61b8497fe8849033180adc76102aed1fa84db9ce0523c9b2321b7949cfa2c0ed7b698d727c44d6be3cd720d5687aeff147e1db085b
@@ -9983,6 +9983,8 @@ __metadata:
   dependencies:
     "@chakra-ui/gatsby-plugin": latest
     "@chakra-ui/react": latest
+    "@contentful/rich-text-react-renderer": latest
+    "@contentful/rich-text-types": latest
     "@emotion/react": latest
     "@emotion/styled": latest
     "@mdx-js/react": latest

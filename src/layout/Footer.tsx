@@ -18,7 +18,7 @@ function Footer() {
         px={4}
         py={8}
         width="100%"
-        maxWidth={720}
+        maxW="2xl"
         display="flex"
         flexDirection="column"
       >

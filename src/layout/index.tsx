@@ -16,7 +16,7 @@ function Layout({ children, title }: LayoutProps) {
         justifyContent="center"
         width="100%"
       >
-        <Box as="main" px={4} py={16} width="100%" maxWidth={720}>
+        <Box as="main" px={4} py={16} width="100%" maxW="2xl">
           <main>{children}</main>
         </Box>
       </Box>

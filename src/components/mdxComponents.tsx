@@ -7,6 +7,7 @@ import {
   OrderedList,
   ListItem,
   Link,
+  Code,
 } from '@chakra-ui/react';
 
 function Pre({
@@ -32,28 +33,6 @@ function Pre({
 }
 
 Pre.defaultProps = {
-  children: undefined,
-  className: undefined,
-};
-
-function Code({
-  children,
-  className,
-}: {
-  children?: React.ReactNode;
-  className?: string;
-}) {
-  if (!children) return null;
-  return className ? (
-    <code>{children}</code>
-  ) : (
-    <Text as="code" bg="gray.100" rounded="sm" px={2}>
-      {children}
-    </Text>
-  );
-}
-
-Code.defaultProps = {
   children: undefined,
   className: undefined,
 };
