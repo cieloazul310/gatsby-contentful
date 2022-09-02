@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link as GatsbyLink, graphql, useStaticQuery } from 'gatsby';
-import { Box, LinkBox, LinkOverlay, Heading, Text } from '@chakra-ui/react';
+import { Box, Stack, LinkBox, LinkOverlay, Heading, Text } from '@chakra-ui/react';
 import { ContentfulPost } from '../../types';
 
 type RecentPostsData = {
@@ -22,7 +22,7 @@ function RecentPosts() {
     }
   `);
   return (
-    <Box my={8}>
+    <Stack my={8} spacing={2}>
       {allContentfulPost.nodes.map(({ title, date, contentful_id }) => (
         <LinkBox key={contentful_id} as="article" p="5" borderWidth="1px" rounded="md">
           <Box as="time" dateTime={date}>
@@ -34,12 +34,11 @@ function RecentPosts() {
             </LinkOverlay>
           </Heading>
           <Text mb="3">
-            Catch up on what’s been cookin’ at Smashing and explore some of the
-            most popular community resources.
+            {'Catch up on what\'s been cookin\' at Smashing and explore some of the most popular community resources.'}
           </Text>
         </LinkBox>
       ))}
-    </Box>
+    </Stack>
   );
 }
 

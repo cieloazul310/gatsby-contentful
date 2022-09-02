@@ -1,9 +1,4 @@
-# Gatsby TypeScript MDX Project Example
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/43d64cce-854f-4e73-85ab-5119f4e912a2/deploy-status)](https://app.netlify.com/sites/gatsby-typescript-mdx-starter/deploys)
-
-Demo
-<https://gatsby-typescript-mdx-starter.netlify.app>
+# Gatsby Contentful Project Example
 
 ## Features
 

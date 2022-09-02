@@ -1,3 +1,4 @@
+/* eslint react/jsx-props-no-spreading: warn */
 import * as React from 'react';
 import {
   Box,
@@ -8,6 +9,14 @@ import {
   ListItem,
   Link,
   Code,
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableContainer,
 } from '@chakra-ui/react';
 
 function Pre({
@@ -38,53 +47,51 @@ Pre.defaultProps = {
 };
 
 function H1(props: any) {
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  return <Heading as="h1" {...props} />;
+  return <Heading as="h1" mb={8} {...props} />;
 }
 
 function H2(props: any) {
-  // eslint-disable-next-line react/jsx-props-no-spreading
   return <Heading as="h2" size="lg" mb={8} {...props} />;
 }
 
 function H3(props: any) {
-  // eslint-disable-next-line react/jsx-props-no-spreading
   return <Heading as="h3" size="lg" mb={6} {...props} />;
 }
 
 function H4(props: any) {
-  // eslint-disable-next-line react/jsx-props-no-spreading
   return <Heading as="h4" size="md" mb={4} {...props} />;
 }
 
 function H5(props: any) {
-  // eslint-disable-next-line react/jsx-props-no-spreading
   return <Heading as="h5" size="md" mb={4} {...props} />;
 }
 
 function H6(props: any) {
-  // eslint-disable-next-line react/jsx-props-no-spreading
   return <Heading as="h6" size="sm" mb={4} {...props} />;
 }
 
 function Paragraph(props: any) {
-  // eslint-disable-next-line react/jsx-props-no-spreading
   return <Text mb={8} {...props} />;
 }
 
 function Ul(props: any) {
-  // eslint-disable-next-line react/jsx-props-no-spreading
   return <UnorderedList mb={8} {...props} />;
 }
 
 function Ol(props: any) {
-  // eslint-disable-next-line react/jsx-props-no-spreading
   return <OrderedList mb={8} {...props} />;
 }
 
 function ALink(props: any) {
-  // eslint-disable-next-line react/jsx-props-no-spreading
   return <Link isExternal {...props} />;
+}
+
+function ChakraTable(props: any) {
+  return (
+    <TableContainer my={8}>
+      <Table {...props} />
+    </TableContainer>
+  );
 }
 
 const mdxComponents = {
@@ -101,6 +108,13 @@ const mdxComponents = {
   ol: Ol,
   li: ListItem,
   a: ALink,
+  table: ChakraTable,
+  thead: Thead,
+  tbody: Tbody,
+  tfoot: Tfoot,
+  tr: Tr,
+  th: Th,
+  td: Td,
 };
 
 export default mdxComponents;
