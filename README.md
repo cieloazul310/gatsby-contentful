@@ -17,6 +17,9 @@
 $ git clone git@github.com:cieloazul310/gatsby-typescript-mdx-starter.git
 $ yarn install
 
+# husky install
+$ yarn run prepare
+
 # develop
 $ yarn run start
 
