@@ -8,10 +8,10 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "develop": "gatsby develop -o",
+    "start": "gatsby develop -o",
     "build": "gatsby build",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve -o",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
     "prettier": "prettier \"src/**/*.{js,jsx,ts,tsx}\" --parser typescript --write",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "latest",
+    "@chakra-ui/icons": "latest",
     "@chakra-ui/react": "latest",
     "@contentful/rich-text-react-renderer": "latest",
     "@contentful/rich-text-types": "latest",

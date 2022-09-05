@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Link as GatsbyLink, graphql, useStaticQuery } from 'gatsby';
-import { Box, Stack, LinkBox, LinkOverlay, Heading, Text } from '@chakra-ui/react';
-import { ContentfulPost } from '../../types';
+import { graphql, useStaticQuery } from 'gatsby';
+import { Stack } from '@chakra-ui/react';
+import PostListItem from './PostListItem';
+import type { ContentfulPost } from '../../types';
 
 type RecentPostsData = {
   allContentfulPost: {
@@ -23,20 +24,8 @@ function RecentPosts() {
   `);
   return (
     <Stack my={8} spacing={2}>
-      {allContentfulPost.nodes.map(({ title, date, contentful_id }) => (
-        <LinkBox key={contentful_id} as="article" p="5" borderWidth="1px" rounded="md">
-          <Box as="time" dateTime={date}>
-            {date}
-          </Box>
-          <Heading size="md" my="2">
-            <LinkOverlay as={GatsbyLink} to={`/post/${contentful_id}/`}>
-              {title}
-            </LinkOverlay>
-          </Heading>
-          <Text mb="3">
-            {'Catch up on what\'s been cookin\' at Smashing and explore some of the most popular community resources.'}
-          </Text>
-        </LinkBox>
+      {allContentfulPost.nodes.map((post) => (
+        <PostListItem post={post} key={post.contentful_id} />
       ))}
     </Stack>
   );

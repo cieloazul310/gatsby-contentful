@@ -4,19 +4,28 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text';
 import Layout from '../layout';
 import Seo from '../components/Seo';
 import RecentPosts from '../components/RecentPosts';
-import type { ContentfulPost } from '../../types';
+import Navigation from '../components/Navigation';
 import renderRichTextOptions from '../components/renderRichTextOptions';
+import type { ContentfulPost } from '../../types';
 
-type ContentfulPageData = {
-  contentfulPost: ContentfulPost;
+
+type ContentfulPostPageData = {
+  contentfulPost: Pick<ContentfulPost, 'date' | 'title' | 'content'>;
+  previous: Pick<ContentfulPost, 'title' | 'contentful_id'> | null;
+  next: Pick<ContentfulPost, 'title' | 'contentful_id'> | null;
+};
+
+type ContentfulPostPageContext = {
+  previous: string | null;
+  next: string | null;
 };
 
 type ContentfulPostTemplateProps = React.PropsWithChildren<
-  PageProps<ContentfulPageData, null>
+  PageProps<ContentfulPostPageData, ContentfulPostPageContext>
 >;
 
 function ContentfulPostTemplate({ data }: ContentfulPostTemplateProps) {
-  const { contentfulPost } = data;
+  const { contentfulPost, previous, next } = data;
   const { title, date, content } = contentfulPost;
 
   return (
@@ -24,6 +33,18 @@ function ContentfulPostTemplate({ data }: ContentfulPostTemplateProps) {
       <article>{renderRichText(content, renderRichTextOptions)}</article>
       <aside>
         <RecentPosts />
+        <Navigation
+          previous={
+            previous
+              ? { ...previous, to: `/post/${previous.contentful_id}/` }
+              : null
+          }
+          next={
+            next
+              ? { ...next, to: `/post/${next.contentful_id}/` }
+              : null
+          }
+        />
       </aside>
     </Layout>
   );
@@ -31,13 +52,13 @@ function ContentfulPostTemplate({ data }: ContentfulPostTemplateProps) {
 
 export default ContentfulPostTemplate;
 
-export function Head({ data }: HeadProps<ContentfulPageData>) {
+export function Head({ data }: HeadProps<ContentfulPostPageData>) {
   const { contentfulPost } = data;
   return <Seo title={contentfulPost.title} />;
 }
 
 export const query = graphql`
-  query ($id: String!) {
+  query ($id: String!, $previous: String, $next: String) {
     contentfulPost(id: { eq: $id }) {
       date(formatString: "YYYY-MM-DD")
       title
@@ -52,6 +73,14 @@ export const query = graphql`
           contentful_id
         }
       }
+    }
+    previous: contentfulPost(id: { eq: $previous }) {
+      title
+      contentful_id
+    }
+    next: contentfulPost(id: { eq: $next }) {
+      title
+      contentful_id
     }
   }
 `;
